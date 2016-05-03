@@ -11,6 +11,7 @@
 <head>
     <base href="<%=basePath%>">
 
+
     <title>My JSP 'main.jsp' starting page</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/jquery-easyui-1.4.4/themes/default/easyui.css">

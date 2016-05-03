@@ -6,7 +6,8 @@
 
        <!-- 别名 -->
        <typeAliases>
-              <package name="com.xiechur.model" />    <!-- 后面书写类全名时默认加该包名前缀如：<resultMap type="User"... -->
+              <package name="com.xiechur.model" />
+           <!-- 后面书写类全名时默认加该包名前缀如：<resultMap type="User"... -->
        </typeAliases>
 
 </configuration>
