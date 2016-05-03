@@ -109,7 +109,7 @@ public class UserController {
         List<User> userList=userService.find(map);
         Long total=userService.getTotal(map);
         JSONObject result=new JSONObject();
-        JSONArray jsonArray = JSONArray.fromObject(userList);
+        JSONArray jsonArray= JSONArray.fromObject(userList);
         result.put("rows", jsonArray);
         result.put("total", total);
         ResponseUtil.write(response, result);

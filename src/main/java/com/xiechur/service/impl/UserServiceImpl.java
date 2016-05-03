@@ -26,10 +26,10 @@ public class UserServiceImpl implements UserService {
     }
     
     @Override
-    public List<User> find(Map<String, Object> map) {
+     public List<User> find(Map<String, Object> map) {
         return userDao.find(map);
     }
-    
+
     @Override
     public Long getTotal(Map<String, Object> map) {
         return userDao.getTotal(map);
