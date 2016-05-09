@@ -76,6 +76,7 @@ public class UserController {
     }
 
 
+
     /**
      * 用户登录
      * @param user
@@ -96,6 +97,7 @@ public class UserController {
             return "redirect:/main.jsp";
         }
     }
+
     /*
     * 分页查询
     * */

@@ -35,12 +35,12 @@ import java.util.Map;
          * @return
          */
         public Long getTotal(Map<String, Object> map);
-
         /**
          * 修改用户
          * @param user
          * @return影响的记录数
          */
+
         public int update(User user);
 
         /**

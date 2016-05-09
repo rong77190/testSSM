@@ -6,8 +6,8 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
-    <result column="birthday" property="birthday" jdbcType="DATE" />
-    <result column="createDate" property="createdate" jdbcType="DATE" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="createDate" property="createdate" jdbcType="VARCHAR" />
     <result column="stuclass" property="stuclass" jdbcType="VARCHAR" />
   </resultMap>
   <resultMap id="StudentResult" type="Student" >
@@ -15,8 +15,8 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
-    <result column="birthday" property="birthday" jdbcType="DATE" />
-    <result column="createDate" property="createdate" jdbcType="DATE" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="createDate" property="createdate" jdbcType="VARCHAR" />
     <result column="stuclass" property="stuclass" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -37,7 +37,7 @@
       sex, birthday, createDate, 
       stuclass)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{createdate,jdbcType=DATE}, 
+      #{sex,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, #{createdate,jdbcType=VARCHAR},
       #{stuclass,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xiechur.model.Student" >
@@ -79,10 +79,10 @@
         #{sex,jdbcType=VARCHAR},
       </if>
       <if test="birthday != null" >
-        #{birthday,jdbcType=DATE},
+        #{birthday,jdbcType=VARCHAR},
       </if>
       <if test="createdate != null" >
-        #{createdate,jdbcType=DATE},
+        #{createdate,jdbcType=VARCHAR},
       </if>
       <if test="stuclass != null" >
         #{stuclass,jdbcType=VARCHAR},
@@ -96,19 +96,19 @@
         name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
-        password = #{password,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="sex != null" >
-        sex = #{sex,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
       </if>
       <if test="birthday != null" >
-        birthday = #{birthday,jdbcType=DATE},
+      birthday = #{birthday,jdbcType=VARCHAR},
       </if>
       <if test="createdate != null" >
-        createDate = #{createdate,jdbcType=DATE},
+        createDate = #{createdate,jdbcType=VARCHAR},
       </if>
       <if test="stuclass != null" >
-        stuclass = #{stuclass,jdbcType=VARCHAR},
+      stuclass = #{stuclass,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -116,15 +116,14 @@
   <update id="updateByPrimaryKey" parameterType="com.xiechur.model.Student" >
     update student
     set name = #{name,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=VARCHAR},
-      birthday = #{birthday,jdbcType=DATE},
-      createDate = #{createdate,jdbcType=DATE},
-      stuclass = #{stuclass,jdbcType=VARCHAR}
+    password = #{password,jdbcType=VARCHAR},
+    sex = #{sex,jdbcType=VARCHAR},
+    birthday = #{birthday,jdbcType=VARCHAR},
+    createDate = #{createdate,jdbcType=VARCHAR},
+    stuclass = #{stuclass,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-
-  <!-- 用户修改 -->
+  <!-- 学生修改 -->
   <update id="update" parameterType="Student">
     update student
     <set>

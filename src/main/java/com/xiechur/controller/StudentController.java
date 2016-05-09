@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +53,10 @@ public class StudentController {
         //操作记录条数，初始化为0
         int resultTotal = 0;
         if (student.getId() == null) {
-            student.setCreatedate(new Date());
+            Date now = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+            String date = format.format(now);
+            student.setCreatedate(date);
             resultTotal = studentService.add(student);
         }else{
             resultTotal = studentService.update(student);

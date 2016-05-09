@@ -1,7 +1,5 @@
 package com.xiechur.model;
 
-import java.util.Date;
-
 public class Student {
     private Integer id;
 
@@ -11,9 +9,9 @@ public class Student {
 
     private String sex;
 
-    private Date birthday;
+    private String birthday;
 
-    private Date createdate;
+    private String createdate;
 
     private String stuclass;
 
@@ -49,20 +47,20 @@ public class Student {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday == null ? null : birthday.trim();
     }
 
-    public Date getCreatedate() {
+    public String getCreatedate() {
         return createdate;
     }
 
-    public void setCreatedate(Date createdate) {
-        this.createdate = createdate;
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate == null ? null : createdate.trim();
     }
 
     public String getStuclass() {
